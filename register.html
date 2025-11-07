@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/burger.css" />
     <link rel="stylesheet" href="css/cards.css" />
-    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/forms.css" />
     <link rel="icon" type="image/png" href="img/fav.png" />
     <title>Emergency Site</title>
   </head>
@@ -34,18 +34,104 @@
     </header>
 
     <main>
-      <h1>INDBERET</h1>
+      <h1>ER DUOLINGO EFTER DIG?</h1>
       <section id="form-section">
         <article id="form-info">
-          <h2>Overskrift</h2>
-          <p>Tekst</p>
+          <h2>Nødregistrering - Ugle Hotline</h2>
+          <p>Hvis uglen har fundet dig, eller du føler dig forfulgt, skal du registrere din situation her. Jo flere lektioner du skylder, jo højere prioritet.</p>
         </article>
-        <form id="webform"></form>
+        <form aria-label="Duolingo beret formular">
+          <div class="form-group">
+            <label for="first_name">Fornavn</label>
+            <input type="text" id="first_name" name="first_name" aria-describedby="fname-error" required />
+            <p class="error-message" id="fname-error">Indtast venligst en værdi</p>
+          </div>
+
+          <div class="form-group">
+            <label for="last_name">Efternavn</label>
+            <input type="text" id="last_name" name="last_name" aria-describedby="lname-error" required />
+            <p class="error-message" id="lname-error">Indtast venligst en værdi</p>
+          </div>
+
+          <div class="form-group">
+            <label for="language">Hvilket sprog lære du?</label>
+            <select id="language" name="language" aria-describedby="language-error" required>
+              <option value="">--Vælg et sprog--</option>
+              <option value="Fransk">Fransk</option>
+              <option value="Spansk">Spansk</option>
+              <option value="Dansk">Dansk</option>
+              <option value="Svensk">Svensk</option>
+              <option value="Norsk">Norsk</option>
+            </select>
+            <p class="error-message" id="language-error">Venligst vælg et sprog</p>
+          </div>
+
+          <div class="form-group">
+            <label for="lektioner">Hvor mange lektioner skylder du?</label>
+            <div>
+              <input type="radio" name="lektioner" value="1-6" required />
+              1 - 6
+            </div>
+            <div>
+              <input type="radio" name="lektioner" value="7-29" required />
+              7 - 29
+            </div>
+            <div>
+              <input type="radio" name="lektioner" value="30-49" required />
+              30 - 49
+            </div>
+            <div>
+              <input type="radio" name="lektioner" value="50+" required />
+              50+
+            </div>
+            <div>
+              <p class="error-message" id="lektioner-error">Venligst vælg et svar</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="situation">Hvad er din nuværende situation med Duolingo?</label>
+            <div>
+              <input type="checkbox" name="situation" value="Trusler" />
+              Duolingo sender mig trussels beskeder
+            </div>
+            <div>
+              <input type="checkbox" name="situation" value="Ved døren" />
+              Duolingo banker på min dør
+            </div>
+            <div>
+              <input type="checkbox" name="situation" value="Vingeslag" />
+              Jeg kan høre vingeslag
+            </div>
+            <div>
+              <input type="checkbox" value="Bag mig" />
+              Duolingo står bag mig
+            </div>
+            <div>
+              <input type="checkbox" name="situation" value="Fanget" />
+              Duolingo har allerede fanget mig
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="accept_terms">
+              <input type="checkbox" id="accept_terms" name="accept_terms" value="Ja" aria-describedby="terms-error" required />
+              Jeg lover jeg laver mine lektioner i fremtiden
+            </label>
+            <p class="error-message" id="terms-error">Sæt venligst kryds i boksen</p>
+          </div>
+          <button>Indsend</button>
+        </form>
       </section>
       <section id="form-summary">
-        <h2>Summary</h2>
-        <article>
-          <p class="placeholder">Opsummering</p>
+        <h2 class="summary">Oversigt</h2>
+        <article class="placeholder">
+          <p>Fornavn: <span id="first_name_output"></span></p>
+          <p>Efternavn: <span id="last_name_output"></span></p>
+          <p>Sprog: <span id="language_output"></span></p>
+          <p>Skyldte lektioner: <span id="lektioner_output"></span></p>
+          <p>Nuværende situation: <span id="situation_output"></span></p>
+          <p>Jeg laver mine sproglektioner: <span id="done_output"></span></p>
         </article>
       </section>
     </main>
@@ -76,6 +162,6 @@
       </nav>
     </footer>
     <script src="js/burger.js"></script>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/register.js"></script>
   </body>
 </html>
