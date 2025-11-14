@@ -40,3 +40,13 @@
 .info-box:nth-of-type(2n) {
   background-color: var(--color-infobox-2-bg);
 }
+
+.flame {
+  width: 30%;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+.flames {
+  display: flex;
+  justify-content: center;
+}
