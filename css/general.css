@@ -139,3 +139,13 @@ footer a {
 ul li {
   margin: 1em;
 }
+
+.logo {
+  width: 12%;
+  max-width: 100%;
+  margin: auto 0;
+}
+
+.breakingText {
+  margin: auto 1em;
+}
