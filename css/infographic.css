@@ -1,11 +1,16 @@
 #head-txt {
   fill: rgb(54, 54, 54);
 }
-.info-graphic,
-.info-text {
+.info-graphic {
   background-color: var(--color-info-bg);
   padding: 20px 0;
 }
+
+.info-text {
+  background-color: var(--color-info-bg2);
+  padding: 20px 0;
+}
+
 .info-graphic {
   border-radius: 0;
   margin: 60px auto 80px auto;
